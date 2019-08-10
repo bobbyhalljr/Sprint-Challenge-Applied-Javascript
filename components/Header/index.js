@@ -2,18 +2,18 @@
 // -----------------------
 // Using a function create the component you see below:
 //
-//  <div class="header">
-//    <span class="date">SMARCH 28, 2019</span>
-//    <h1>Lambda Times</h1>
-//    <span class="temp">98°</span>
-//  </div >
+//<div class="header">
+/* <span class="date">SMARCH 28, 2019</span>
+<h1>Lambda Times</h1>
+<span class="temp">98°</span>
+</div> */
 // And add it to the DOM in the .headerContainer component
 
-function header(title, date, temp) {
-    
-    const headerDiv = document.createElement('div');
-    headerDiv.classList.add('header');
-    
+
+function headLineComponet(date, title, temp) {
+    const headLine = document.createElement('div');
+    headLine.classList.add('header');
+
     date = document.createElement('span');
     date.classList.add('date');
     date.textContent = date;
@@ -22,18 +22,21 @@ function header(title, date, temp) {
     title.textContent = title;
 
     temp = document.createElement('span');
+    temp.classList.add('temp');
     temp.textContent = temp;
 
-    headerDiv.appendChild(date);
-    headerDiv.appendChild(title);
-    headerDiv.appendChild(temp);
+    headLine.append(date);
+    headLine.append(title);
+    headLine.append(temp);
 
-    return header;
+    console.log(headLineComponet)
+    return headLineComponet;
 }
 
-const headerContainer = document.querySelector('.header-container');
 
-// const newHeader = header('Lambda Times', 'MARCH 28, 2019', '98°')
-// console.log(newHeader)
+const headLineContainer = document.querySelector('.header-container');
 
-headerContainer.append(header('Lambda Times', 'MARCH 28, 2019', '98°'));
+let newHeadLine = headLineComponet('MARCH 28, 2019', 'Lambda Times', '98°');
+// console.log(newHeadLine)
+
+headLineContainer.append(newHeadLine);
